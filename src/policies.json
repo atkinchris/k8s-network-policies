@@ -1,0 +1,104 @@
+{
+  "apiVersion": "v1",
+  "items": [
+      {
+          "apiVersion": "extensions/v1beta1",
+          "kind": "NetworkPolicy",
+          "metadata": {
+              "annotations": {
+                  "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"extensions/v1beta1\",\"kind\":\"NetworkPolicy\",\"metadata\":{\"annotations\":{},\"name\":\"web-allow\",\"namespace\":\"default\"},\"spec\":{\"ingress\":[{\"from\":[{\"podSelector\":{\"matchLabels\":{\"role\":\"tester\"}}}]}],\"podSelector\":{\"matchLabels\":{\"app\":\"web\"}}}}\n"
+              },
+              "creationTimestamp": "2018-11-25T19:07:41Z",
+              "generation": 3,
+              "name": "web-allow",
+              "namespace": "default",
+              "resourceVersion": "6467665",
+              "selfLink": "/apis/extensions/v1beta1/namespaces/default/networkpolicies/web-allow",
+              "uid": "61fccda5-f0e5-11e8-81f7-06a1870bb3b6"
+          },
+          "spec": {
+              "ingress": [
+                  {
+                      "from": [
+                          {
+                              "podSelector": {
+                                  "matchLabels": {
+                                      "role": "tester"
+                                  }
+                              }
+                          }
+                      ]
+                  }
+              ],
+              "podSelector": {
+                  "matchLabels": {
+                      "app": "web"
+                  }
+              },
+              "policyTypes": [
+                  "Ingress"
+              ]
+          }
+      },
+      {
+          "apiVersion": "extensions/v1beta1",
+          "kind": "NetworkPolicy",
+          "metadata": {
+              "annotations": {
+                  "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"extensions/v1beta1\",\"kind\":\"NetworkPolicy\",\"metadata\":{\"annotations\":{},\"name\":\"web-allow-egress\",\"namespace\":\"default\"},\"spec\":{\"egress\":[{}],\"podSelector\":{\"matchLabels\":{\"app\":\"web\"}},\"policyTypes\":[\"Egress\"]}}\n"
+              },
+              "creationTimestamp": "2018-11-27T19:48:33Z",
+              "generation": 1,
+              "name": "web-allow-egress",
+              "namespace": "default",
+              "resourceVersion": "6471481",
+              "selfLink": "/apis/extensions/v1beta1/namespaces/default/networkpolicies/web-allow-egress",
+              "uid": "6c5bbd67-f27d-11e8-9692-02749c737a80"
+          },
+          "spec": {
+              "egress": [
+                  {}
+              ],
+              "podSelector": {
+                  "matchLabels": {
+                      "app": "web"
+                  }
+              },
+              "policyTypes": [
+                  "Egress"
+              ]
+          }
+      },
+      {
+          "apiVersion": "extensions/v1beta1",
+          "kind": "NetworkPolicy",
+          "metadata": {
+              "annotations": {
+                  "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"extensions/v1beta1\",\"kind\":\"NetworkPolicy\",\"metadata\":{\"annotations\":{},\"name\":\"web-deny-all\",\"namespace\":\"default\"},\"spec\":{\"podSelector\":{\"matchLabels\":{\"app\":\"web\"}},\"policyTypes\":[\"Ingress\"]}}\n"
+              },
+              "creationTimestamp": "2018-11-25T19:08:28Z",
+              "generation": 2,
+              "name": "web-deny-all",
+              "namespace": "default",
+              "resourceVersion": "6467249",
+              "selfLink": "/apis/extensions/v1beta1/namespaces/default/networkpolicies/web-deny-all",
+              "uid": "7dc1056c-f0e5-11e8-9692-02749c737a80"
+          },
+          "spec": {
+              "podSelector": {
+                  "matchLabels": {
+                      "app": "web"
+                  }
+              },
+              "policyTypes": [
+                  "Ingress"
+              ]
+          }
+      }
+  ],
+  "kind": "List",
+  "metadata": {
+      "resourceVersion": "",
+      "selfLink": ""
+  }
+}
